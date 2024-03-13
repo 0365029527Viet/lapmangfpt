@@ -40,6 +40,8 @@ class PageController extends Controller
     public function thutucchinhsach(){
         return view('page.menu.thutucchinhsach');
     }
-
-    
+    // nhan tin voi shop
+    public function nhantinvoishop(){
+        return view('page.menu.nhantinvoishop');
+    }
 }

@@ -29,3 +29,6 @@ Route::get('/ho-tro-ky-thuat-internet-fpt', [PageController::class, 'spkithuat']
 Route::get('/chinh-sach-va-thu-tuc-fpt-telecom', [PageController::class, 'thutucchinhsach'])->name('thutucchinhsach');
 //Route Khu vực hà nội
 Route::get('/fpt-quan-ba-dinh', [PageController::class, 'hotro'])->name('hotro');
+
+//Router nhan tin voi chu shop
+Route::get('/nhan-tin-voi-chu-shop', [PageController::class, 'nhantinvoishop'])->name('nhantinvoishop');
