@@ -46,4 +46,9 @@ Route::get('/dashboarsh', function ()  {
  Route::get('/sua-khu-vuc/{id}', [khuvucfptController::class, 'show'])->name('regions.edit');
  Route::post('/sua-khu-vuc/{id}', [khuvucfptController::class, 'update'])->name('regions.update');
 
+
+
  Route::resource('city', thanhphoController::class);
+ Route::get('/xoa-tinh-thanh/{id}', [thanhphoController::class, 'destroy'])->name('city.delete');
+ Route::get('/sua-tinh-thanh/{id}', [thanhphoController::class, 'show'])->name('city.edit');
+ Route::post('/sua-tinh-thanh/{id}', [thanhphoController::class, 'update'])->name('city.update');

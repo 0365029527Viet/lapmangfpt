@@ -4,12 +4,13 @@
 
     <div class="card-header py-3">
       <h3 class="m-0 font-weight-bold text-primary text-align col">THÊM KHU VỰC</h3> <hr>
-    <form action="{{ route('regions.store') }}" method="post">
+    <form action="{{ route('city.store') }}" method="post">
         @csrf
         <div class="mb-3">
             <label for="" class="form-label">Tên thành phố</label>
-            <input type="text" class="form-control" name="ten_khu_vuc">
+            <input type="text" class="form-control" name="ten_thanh_pho">
           </div>
+
           <div class="mb-3">
             <label for="" class="form-label">Khu vực</label>
             <select

@@ -4,7 +4,7 @@
 
     <div class="card-header py-3">
       <h3 class="m-0 font-weight-bold text-primary text-align col">Sửa KHU VỰC</h3> <hr>
-    <form action="{{ route('regions.update', ['id'=>request()->route('id')]) }}" method="post">
+    <form action="{{ route('city.update', ['id'=>request()->route('id')]) }}" method="post">
         @csrf
         <div class="mb-3">
             <label for="" class="form-label">Tên khu vực</label>

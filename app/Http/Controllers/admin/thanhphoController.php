@@ -35,15 +35,14 @@ class thanhphoController extends Controller
     {
         $request->validate([
             'ten_thanh_pho' => 'required',
-            'slug' => 'required',
-            'id_khu_vuc' => 'require'
+            'id_khu_vuc' => 'required'
         ]);
 
         $data = new thanhpho();
 
         $data->ten_thanh_pho = $request->ten_thanh_pho;
         $data->slug = Str::slug($request->ten_thanh_pho);
-        $data->ten_thanh_pho = $request->ten_thanh_pho;
+        $data->id_khu_vuc = $request->id_khu_vuc;
 
         $data->save();
 
@@ -65,15 +64,14 @@ class thanhphoController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'ten_thanh_pho' => 'required',
-            'slug' => 'required',
-            'id_khu_vuc' => 'require'
+            'ten_thanh_pho' => 'required|string|max:50',
+            'id_khu_vuc' => 'required|string|max:50'
         ]);
 
         $data = thanhpho::find($id);
         $data->ten_thanh_pho = $request->ten_thanh_pho;
         $data->slug = Str::slug($request->ten_thanh_pho);
-        $data->ten_thanh_pho = $request->ten_thanh_pho;
+        $data->id_khu_vuc = $request->id_khu_vuc;
 
         $data->update();
 
