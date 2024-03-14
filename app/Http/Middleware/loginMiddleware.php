@@ -19,6 +19,6 @@ class loginMiddleware
 
             return $next($request);
         }
-        return redirect('/trangchu');
+        return redirect('/trang-chu');
     }
 }
