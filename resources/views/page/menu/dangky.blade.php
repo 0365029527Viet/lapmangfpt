@@ -8,7 +8,7 @@
     <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
       <div class="container">
         <div class="row gx-lg-5 align-items-center">
-
+          <legend>Đăng ký </legend>
             <form action="{{ route('auth.signup') }}" method="post">
               @csrf
                 <!-- 2 column grid layout with text inputs for the first and last names -->

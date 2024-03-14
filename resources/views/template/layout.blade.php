@@ -665,6 +665,9 @@
                                         </div>
                                     </div>
                                 </div>
+								<div style="text-align: end">
+									<a href="{{ route('auth.login') }}">Đăng nhập</a> | <a href="{{ route('dangky') }}" >	Đăng ký </a>  
+								</div>
                                 <div class="bocuc  bocuc_13">
                                     <div class="loprong">
                                         <div class="padding ">
@@ -2047,7 +2050,7 @@
 		var arctel = '0988638092';
 		
 		// them phan nhan tin cho admin
-		var arcchat='nhan-tin-voi-chu-shop'
+		var arcchat='login'
 		
 
 

@@ -5,7 +5,7 @@
         <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
             <div class="container">
                 <div class="row gx-lg-5 align-items-center">
-
+                    <legend>Đăng nhập </legend>
                     <form action="{{route('auth.login')}}" method="post">
                         @csrf
                         <!-- 2 column grid layout with text inputs for the first and last names -->
@@ -25,9 +25,12 @@
 
                             <!-- Submit button -->
                             <button type="submit" class="btn btn-primary btn-block mb-4">
-                                Login
+                                Đăng nhập
                             </button>
-
+                            <button  class="btn btn-light btn-block mb-4" >
+                                <a href="{{ route('dangky') }}" class="text-primary">Đăng ký </a>
+                                
+                            </button>
                             <!-- Register buttons -->
 
                     </form>
