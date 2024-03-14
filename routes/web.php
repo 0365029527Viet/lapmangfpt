@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\khuvucfptController;
 use App\Http\Controllers\admin\thanhphoController;
+use App\Http\Controllers\auth\loginController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,23 +33,42 @@ Route::get('/ho-tro-ky-thuat-internet-fpt', [PageController::class, 'spkithuat']
 Route::get('/chinh-sach-va-thu-tuc-fpt-telecom', [PageController::class, 'thutucchinhsach'])->name('thutucchinhsach');
 //Route Khu vực hà nội
 
-// ADMIN
-Route::get('/dashboarsh', function ()  {
-    return view('template.admin'); 
+//login
+Route::middleware('admin')->group(function () {
+
+    Route::get('/dashboard', function () {
+        return view('template.admin');
+    });
+
+    Route::get('/khu-vuc', [khuvucfptController::class, 'index'])->name('regions.index');
+    Route::get('/add-khu-vuc', [khuvucfptController::class, 'create'])->name('regions.create');
+    Route::post('/add-khu-vuc', [khuvucfptController::class, 'store'])->name('regions.store');
+    Route::get('/xoa-khu-vuc/{id}', [khuvucfptController::class, 'destroy'])->name('regions.delete');
+    Route::get('/sua-khu-vuc/{id}', [khuvucfptController::class, 'show'])->name('regions.edit');
+    Route::post('/sua-khu-vuc/{id}', [khuvucfptController::class, 'update'])->name('regions.update');
+
+    //
+    Route::get('/thanh-pho', [thanhphoController::class, 'index'])->name('city.index');
+    Route::get('/add-thanh-pho', [thanhphoController::class, 'create'])->name('city.create');
+    Route::post('/add-thanh-pho', [thanhphoController::class, 'store'])->name('city.store');
+    Route::get('/xoa-thanh-pho/{id}', [thanhphoController::class, 'destroy'])->name('city.delete');
+    Route::get('/sua-thanh-pho/{id}', [thanhphoController::class, 'show'])->name('city.edit');
+    Route::post('/sua-thanh-pho/{id}', [thanhphoController::class, 'update'])->name('city.update');
 });
 
-Route::get('/khu-vuc', [khuvucfptController::class, 'index'])->name('regions.index');
-Route::get('/add-khu-vuc', [khuvucfptController::class, 'create'])->name('regions.create');
-Route::post('/add-khu-vuc', [khuvucfptController::class, 'store'])->name('regions.store');
-Route::get('/xoa-khu-vuc/{id}', [khuvucfptController::class, 'destroy'])->name('regions.delete');
-Route::get('/sua-khu-vuc/{id}', [khuvucfptController::class, 'show'])->name('regions.edit');
-Route::post('/sua-khu-vuc/{id}', [khuvucfptController::class, 'update'])->name('regions.update');
+Route::get('/login', [loginController::class, 'index'])->name('auth.index');
+Route::post('/sign-up', [loginController::class, 'signUp'])->name('auth.signup');
+Route::post('/login', [loginController::class, 'login'])->name('auth.login');
+Route::get('/logout', [loginController::class, 'logout'])->name('auth.logout');
 
-Route::resource('city', thanhphoController::class);
+
+
+
+
+
 
 
 Route::get('/fpt-quan-ba-dinh', [PageController::class, 'hotro'])->name('hotro');
 
 //Router nhan tin voi chu shop
 Route::get('/nhan-tin-voi-chu-shop', [PageController::class, 'nhantinvoishop'])->name('nhantinvoishop');
-

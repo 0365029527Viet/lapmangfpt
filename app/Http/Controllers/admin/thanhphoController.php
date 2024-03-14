@@ -35,16 +35,14 @@ class thanhphoController extends Controller
     {
         $request->validate([
             'ten_thanh_pho' => 'required',
-            'slug' => 'required',
             'id_khu_vuc' => 'require'
         ]);
-
         $data = new thanhpho();
-
+        // dd($request->all());
         $data->ten_thanh_pho = $request->ten_thanh_pho;
         $data->slug = Str::slug($request->ten_thanh_pho);
-        $data->ten_thanh_pho = $request->ten_thanh_pho;
-
+        $data->id_khu_vuc = $request->id_khu_vuc;
+        // dd($data);
         $data->save();
 
         return redirect()->route('city.index')->with('success', 'Thêm thành công');
@@ -56,7 +54,8 @@ class thanhphoController extends Controller
     public function show(string $id)
     {
         $data = thanhpho::find($id);
-        return view('admin.tinhthanh.edit', compact('data'));
+        $khuvuc = khuvucfpt::all();
+        return view('admin.tinhthanh.edit', compact('data', 'khuvuc'));
     }
 
     /**
@@ -64,16 +63,17 @@ class thanhphoController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        
+        // dd($request->all());
         $request->validate([
             'ten_thanh_pho' => 'required',
-            'slug' => 'required',
-            'id_khu_vuc' => 'require'
+            'id_khu_vuc' => 'required'
         ]);
 
         $data = thanhpho::find($id);
         $data->ten_thanh_pho = $request->ten_thanh_pho;
         $data->slug = Str::slug($request->ten_thanh_pho);
-        $data->ten_thanh_pho = $request->ten_thanh_pho;
+        $data->id_khu_vuc = $request->id_khu_vuc;
 
         $data->update();
 

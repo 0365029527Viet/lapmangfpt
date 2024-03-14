@@ -26,12 +26,13 @@
                     @foreach ($data as $item)
                     <tr>
                         <td>{{$index++ }}</td>
-                        <td>{{$item->ten_khu_vuc}}</td>
+                        <td>{{$item->ten_thanh_pho}}</td>
                         <td>{{$item->slug}}</td>
+                        <td>{{$item->khuvucfpt->ten_khu_vuc}}</td>
                         <td>
-                            <a href="{{ route('regions.delete', ['id'=>$item->id]) }}" onclick="return confirm('Bạn có chắc chắn xóa dữ liệu?')"><i class="fas fa-trash-alt"></i>
+                            <a href="{{ route('city.delete', ['id'=>$item->id]) }}" onclick="return confirm('Bạn có chắc chắn xóa dữ liệu?')"><i class="fas fa-trash-alt"></i>
                             </a> | 
-                            <a href="{{ route('regions.edit', ['id'=>$item->id])}}"><i class="fas fa-edit"></i>
+                            <a href="{{ route('city.edit', ['id'=>$item->id])}}"><i class="fas fa-edit"></i>
                             </a>
                         </td>
 

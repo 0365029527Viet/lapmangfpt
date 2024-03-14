@@ -784,11 +784,7 @@
 												</main>
                             
                                                 <div class="bocuc bocuc_77">
-                                                    <div class="loprong">
-                                                        <div class="padding "><span><img class="lazy  anh_2"
-                                                                    src="https://lapmangfpt.vn/files/assets/chao_xuan_2019_fpt.jpg"
-                                                                    alt="chao_xuan_2019_fpt" /></span></div>
-                                                    </div>
+													
                                                 </div>
                                             </div>
                                         </div>
@@ -809,12 +805,11 @@
                                                 <div class="giua" style="background-color: #F1F8FF;border-left: 0.3px solid #D5E1EF">
                                                     <div class="padding">
                                                         <p style="text-align: center;"><span style="font-size: 24pt;"><a
-                                                                    href="tel:0826100000"><span style="color: #000000;"><strong><img
+                                                                    href="tel:0988638092"><span style="color: #000000;"><strong><img
                                                                                 style="float: none;"
                                                                                 src="files/assets/submenu_contact.png"
                                                                                 alt="submenu_contact" width="51" height="35" /><span
-                                                                                style="font-size: 18pt; color: #000080;">08261
-                                                                                00000</span></strong></span></a></span></p>
+                                                                                style="font-size: 18pt; color: #000080;">0988.638.092</span></strong></span></a></span></p>
                                                         <p style="text-align: center;">&nbsp;</p>
                                                     </div>
                                                 </div>
@@ -2046,10 +2041,10 @@
 
 	<script>
 		var arcface = '';
-		var arczalo = '0826100000';
+		var arczalo = '0988638092';
 		var arcsky = '';
 		var arcemail = '';
-		var arctel = '08261 00000';
+		var arctel = '0988638092';
 		
 		// them phan nhan tin cho admin
 		var arcchat='nhan-tin-voi-chu-shop'

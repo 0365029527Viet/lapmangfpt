@@ -14,7 +14,7 @@ class thanhpho extends Model
         'id_khu_vuc'
     ];
 
-    public function khuvuc() {
+    public function khuvucfpt() {
         return $this->belongsTo(khuvucfpt::class, 'id_khu_vuc', 'id');
     }
 }
