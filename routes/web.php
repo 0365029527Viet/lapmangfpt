@@ -31,6 +31,10 @@ Route::get('/goi-cuoc-mo-rong-truyen-hinh-fpt', [PageController::class, 'goimoro
 Route::get('/chi-tiet-cac-danh-sach-kenh-truyen-hinh-fpt', [PageController::class, 'danhsachkenh'])->name('danhsachkenh');
 Route::get('/ho-tro-ky-thuat-internet-fpt', [PageController::class, 'spkithuat'])->name('spkithuat');
 Route::get('/chinh-sach-va-thu-tuc-fpt-telecom', [PageController::class, 'thutucchinhsach'])->name('thutucchinhsach');
+
+Route::get('/dang-ky', [PageController::class, 'dangky'])->name('dangky');
+//Route::get('/dang-ky', [PageController::class, 'dangky'])->name('dangky');
+
 //Route Khu vực hà nội
 
 //login
@@ -70,5 +74,3 @@ Route::get('/logout', [loginController::class, 'logout'])->name('auth.logout');
 
 Route::get('/fpt-quan-ba-dinh', [PageController::class, 'hotro'])->name('hotro');
 
-//Router nhan tin voi chu shop
-Route::get('/nhan-tin-voi-chu-shop', [PageController::class, 'nhantinvoishop'])->name('nhantinvoishop');

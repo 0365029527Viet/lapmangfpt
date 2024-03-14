@@ -13,7 +13,6 @@ class loginController extends Controller
     //
     public function index()
     {
-        
             return view('auth.login');
     }
     public function login(Request $request)
@@ -50,6 +49,16 @@ class loginController extends Controller
         $data->save();
 
         return redirect()->route('auth.login')->with('success', 'Đăng kí thành công, mời bạn đăng nhập.');
+    }
+
+    // dangky
+    public function DangKy(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('trangchu');
+
     }
 
 }
